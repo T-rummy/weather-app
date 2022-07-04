@@ -63,3 +63,24 @@
     margin-left: -15px;
     flex-direction: column;
 }
+.weather{
+    border: 1px solid black;
+    width: 60%;
+    margin-left: 35%;
+    height: fit-content;
+    margin-top: -15%;
+}
+.weather-header{
+    font-size: 30px;
+    text-align: left;   
+}
+
+.weather-list{
+    list-style: none;
+    font-size: 20px;
+}
+.weather-list li{
+    margin-top: 45px;
+    text-align: left;
+    margin-left: -35px;
+}
