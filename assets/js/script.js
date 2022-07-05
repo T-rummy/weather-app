@@ -13,9 +13,19 @@ var getApi = function(cityContent){
 
             var weatherH1 = document.createElement("h1");
             weatherH1.setAttribute("class", "weather-header");
-            weatherH1.textContent = data.name + " " + "(" + new Date().toLocaleDateString() + ")";
+
+            if(data.weather[0].main === "Clouds"){
+                weatherH1.innerHTML = data.name + " " + "(" + new Date().toLocaleDateString() + ")" + "<span class='oi oi-cloud'></span>";
+            } else if (data.weather[0].main === "Clear"){
+                weatherH1.innerHTML = data.name + " " + "(" + new Date().toLocaleDateString() + ")" + "<span class='oi oi-sun'></span>";
+            }
+
+        
+           
+            
 
             currentEl.setAttribute("class", "weather");
+                
 
             var infoUl = document.createElement("ul");
                 infoUl.setAttribute("class", "weather-list");
@@ -35,11 +45,11 @@ var getApi = function(cityContent){
                 var infoLiUv = document.createElement("li");   
                     infoLiUv.textContent = "UV: 4.7"
                     
-            
             infoUl.appendChild(infoLiTemp);
             infoUl.appendChild(infoLiWind);
             infoUl.appendChild(infoLiHum);
             infoUl.appendChild(infoLiUv);
+        
 
             
             currentEl.appendChild(weatherH1);
